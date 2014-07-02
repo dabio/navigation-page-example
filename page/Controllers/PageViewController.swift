@@ -33,13 +33,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     }
 
 
-    // #pragma mark - Helpers
-
-    func indexOf(string: String, inArray array: String[]) -> Int {
-        return find(array, string)!
-    }
-
-
     // #pragma mark - UPageViewControllerDataSource
 
     func pageViewController(pageViewController: UIPageViewController!, viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController! {
