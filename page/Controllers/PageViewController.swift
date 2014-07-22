@@ -10,13 +10,13 @@ import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
-    let controllers: String[] = [
+    let controllers: [String] = [
         "firstViewController",
         "secondViewController",
         "thirdViewController",
     ]
 
-    @lazy var pageControl: UIPageControl = {
+    lazy var pageControl: UIPageControl = {
         let pageControl: UIPageControl = UIPageControl()
         pageControl.numberOfPages = self.controllers.count
         pageControl.currentPage = 0
@@ -52,7 +52,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     }
 
 
-    // #pragma mark - Actions
+  //MARK: - Actions
 
     func pageControlChanged(pageControl: UIPageControl) {
 
@@ -69,7 +69,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     }
 
 
-    // #pragma mark - UPageViewControllerDataSource
+    //MARK: - UPageViewControllerDataSource
 
     func pageViewController(pageViewController: UIPageViewController!, viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController! {
 
@@ -92,9 +92,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     }
 
 
-    // #pragma mark - UPageViewControllerDelegate
+    //MARK: - UPageViewControllerDelegate
 
-    func pageViewController(pageViewController: UIPageViewController!, didFinishAnimating finished: Bool, previousViewControllers: AnyObject[]!, transitionCompleted completed: Bool) {
+    func pageViewController(pageViewController: UIPageViewController!, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject]!, transitionCompleted completed: Bool) {
 
         let vc: UIViewController = pageViewController.viewControllers[0] as UIViewController
         let position: Int = find(self.controllers, vc.restorationIdentifier)!
